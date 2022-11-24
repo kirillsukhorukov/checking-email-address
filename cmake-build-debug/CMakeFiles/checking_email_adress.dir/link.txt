@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\checking_email_adress.dir/objects.a
+C:\PROGRA~1\mingw-64\bin\ar.exe qc CMakeFiles\checking_email_adress.dir/objects.a @CMakeFiles\checking_email_adress.dir\objects1.rsp
+C:\PROGRA~1\mingw-64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\checking_email_adress.dir/objects.a -Wl,--no-whole-archive -o checking_email_adress.exe -Wl,--out-implib,libchecking_email_adress.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\checking_email_adress.dir\linklibs.rsp
