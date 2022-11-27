@@ -1,7 +1,7 @@
 #include <iostream>
 
 // Функция выделения левой части адреса
-std::string leftpart (std::string str)
+std::string left_part (std::string str)
 {
     std::string left;
     for (int i=0; i<str.length(); i++)
@@ -19,9 +19,9 @@ std::string leftpart (std::string str)
 }
 
 // Функция выделения правой части адреса
-std::string rightpart (std::string str)
+std::string right_part (std::string str)
 {
-    std::string left = leftpart(str);
+    std::string left = left_part(str);
     std::string right;
     for (int i=left.length()+1; i<str.length(); i++)
     {
@@ -31,26 +31,38 @@ std::string rightpart (std::string str)
 }
 
 // Функция проверки совпадения длины строк (проверка наличия знака '@')
-bool equallength (std::string str1, std::string str2)
+bool check_dog (std::string str1, std::string str2)
 {
-    bool equal = (str1.length() == str2.length()) ? true : false;
-    return equal;
+    if (str1.length() == str2.length()) return true;
+    else return false;
 }
 
 // Функция проверки длины строки
-bool lengincorrect (std::string str, int l)
+bool length_incorrect (std::string str, int l)
 {
-    bool incorrect = (str.length()>0 && str.length() <= l) ? false : true;
-    return incorrect;
+    if (str.length()>0 && str.length() <= l) return false;
+    else return true;
 }
 
 // Функция проверки правильности использования точек
-bool dotincorrect (std::string str)
+bool dot_incorrect (std::string str)
 {
     int doubleDot = int (str.find(".."));
-    bool incorrect = (str[0] == '.' || str[str.length()-1] == '.' || doubleDot >= 0) ? true: false;
-    return incorrect;
+    if (str[0] == '.' || str[str.length()-1] == '.' || doubleDot >= 0) return true;
+    else return false;
 }
+
+// Функция проверки строки по словарю
+bool find_bad_char (std::string str, std::string dictionary)
+{
+    for (int i=0; i<str.length(); i++)
+    {
+        int goodChar = dictionary.find(str[i]);
+        if (goodChar<0) return true;
+    }
+    return false;
+}
+
 int main()
 {
     while (true)
@@ -61,16 +73,25 @@ int main()
         std::cin >> email;
 
         std::string left, right;
-        left = leftpart(email);
-        right = rightpart(email);
+        left = left_part(email);
+        right = right_part(email);
 
-        std::cout << "Left part your email address: " << left << std::endl;
-        std::cout << "Right part your email address: " << right << std::endl;
-        std::cout << int (left.find("..")) << std::endl;
-        std::cout << int (right.find("..")) << std::endl;
+        // Выход из цикла
+        if (left == "exit" && right.length() == 0)
+        {
+            std::cout << "Program stopped!" << std::endl;
+            break;
+        }
+
+        // Задание строк словарей для левой и правой частей
+        std::string dictionary_left = "-.0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                                      "!#$%&`*+-/=?^_'{|}~";
+        std::string dictionary_right = "-.0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+
         // Вывод результата проверки
-        if (equallength(left, email) || lengincorrect(left, 64) || lengincorrect(right, 63) ||
-            dotincorrect(left) || dotincorrect(right))
+        if (check_dog(left, email) || length_incorrect(left, 64) || length_incorrect(right, 63) ||
+                dot_incorrect(left) || dot_incorrect(right) || find_bad_char(left,dictionary_left) ||
+                find_bad_char(right,dictionary_right))
         {
             std::cout << "Your email address is incorrect!" << std::endl;
         }
@@ -78,6 +99,7 @@ int main()
         {
             std::cout << "Your email address is correct." << std::endl;
         }
+
     }
 
     return 0;

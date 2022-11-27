@@ -1,3 +1,3 @@
-C:/Users/Kirill/CLionProjects/checking-email-adress/cmake-build-debug/CMakeFiles/checking_email_adress.dir
-C:/Users/Kirill/CLionProjects/checking-email-adress/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Kirill/CLionProjects/checking-email-adress/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Kirill/CLionProjects/checking-email-address/cmake-build-debug/CMakeFiles/checking_email_adress.dir
+C:/Users/Kirill/CLionProjects/checking-email-address/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Kirill/CLionProjects/checking-email-address/cmake-build-debug/CMakeFiles/rebuild_cache.dir

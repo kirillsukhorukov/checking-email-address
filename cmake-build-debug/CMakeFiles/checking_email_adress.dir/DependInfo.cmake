@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Kirill/CLionProjects/checking-email-adress/main.cpp" "CMakeFiles/checking_email_adress.dir/main.cpp.obj" "gcc" "CMakeFiles/checking_email_adress.dir/main.cpp.obj.d"
+  "C:/Users/Kirill/CLionProjects/checking-email-address/main.cpp" "CMakeFiles/checking_email_adress.dir/main.cpp.obj" "gcc" "CMakeFiles/checking_email_adress.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
