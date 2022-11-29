@@ -65,6 +65,7 @@ bool find_bad_char (std::string str, std::string dictionary)
 
 int main()
 {
+    std::cout << "------------Checking the correctness of the e-mail address------------\n" << std::endl;
     while (true)
     {
         // Ввод строки с адресом электронной почты
